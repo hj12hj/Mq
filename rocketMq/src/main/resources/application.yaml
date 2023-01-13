@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: rocketMq
+
+
+
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    topic: test-topic
+    group: app_producer
+
+
+
+
+
+  consumer:
+    group: app_consumer
+    message-model: pull
+server:
+  port: 8082
+

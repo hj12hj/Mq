@@ -1,0 +1,24 @@
+spring:
+  name: rabbit-mq
+
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated
+    publisher-returns: true
+
+    listener:
+      type: simple
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: false
+
+
+
+
+
+
+
