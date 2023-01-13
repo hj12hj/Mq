@@ -18,11 +18,6 @@
     </properties>
     <dependencies>
 
-        <dependency>
-            <groupId>io.github.hj12hj</groupId>
-            <artifactId>watermarkPlugs</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

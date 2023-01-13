@@ -25,8 +25,9 @@ public class DeadLetterAckReceiver {
     public void deadLetterReceiver1(@NotNull Message message, Channel channel) {
         try {
             // 直接拒绝消费该消息，后面的参数一定要是false，否则会重新进入业务队列，不会进入死信队列
-            channel.basicReject(message.getMessageProperties().getDeliveryTag(), false);
-            log.info("拒绝签收...消息的路由键为：" + message.getMessageProperties().getReceivedRoutingKey());
+//            channel.ac (message.getMessageProperties().getDeliveryTag(), false);
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+//            log.info("拒绝签收...消息的路由键为：" + message.getMessageProperties().getReceivedRoutingKey());
         } catch (Exception e) {
             log.info("消息拒绝签收失败", e);
         }

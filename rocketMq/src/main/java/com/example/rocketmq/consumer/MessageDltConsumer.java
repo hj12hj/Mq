@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RocketMQMessageListener(topic = "%DLQ%consumer-group", consumerGroup = "consumer-group1",
         //selectorExpression = "tag1",selectorType = SelectorType.TAG,
+        maxReconsumeTimes = 1,
         messageModel = MessageModel.CLUSTERING, consumeMode = ConsumeMode.CONCURRENTLY)
 public class MessageDltConsumer implements RocketMQListener<String>, RocketMQPushConsumerLifecycleListener {
     @Override
